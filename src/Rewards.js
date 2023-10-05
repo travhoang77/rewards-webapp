@@ -18,6 +18,8 @@ const months = [
   },
 ];
 
+const baseUrl = "https://mock-api-f62d8fa759ff.herokuapp.com/api";
+
 function Rewards(props) {
   const [rewardsData, setRewardsData] = useState({});
   const [total, setTotal] = useState(0);
@@ -30,7 +32,7 @@ function Rewards(props) {
       let totalRewards = 0; // Initialize total rewards
 
       for (const month of months) {
-        const apiUrl = `http://localhost:5000/api/transactions/rewards?customer_id=${props.object.id}&start_date=${month.startDate}&end_date=${month.endDate}`;
+        const apiUrl = `${baseUrl}/transactions/rewards?customer_id=${props.object.id}&start_date=${month.startDate}&end_date=${month.endDate}`;
 
         try {
           const response = await fetch(apiUrl);
