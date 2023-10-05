@@ -3,11 +3,9 @@ import Rewards from "./Rewards"
 import logo from './logo.svg';
 import './App.css';
 
-const baseUrl = "https://mock-api-f62d8fa759ff.herokuapp.com/api";
-
 function App() {
   const [customers, setCustomers] = useState([]);
-  const customersUrl = `${baseUrl}/customers`;
+  const customersUrl = "http://localhost:5000/api/customers";
 
 
   useEffect(() => {
